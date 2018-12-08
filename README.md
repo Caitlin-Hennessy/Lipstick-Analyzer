@@ -13,27 +13,27 @@ Next, I load the data into a pandas.DataFrame, excluding the "percent buy again"
 
 Now the DataFrame looks like this:
 
-![](images/img2.png)
+<img src="images/img2.png" width="800" />
 
 For starters, I compare the top 10 most popular lipsticks...
 
-![](images/img3.png)
+<img src="images/img3.png" width="800" />
 
 ...with the 10 most highly rated lipsticks:
 
-![](images/img4.png)
+<img src="images/img4.png" width="800" />
 
 Clearly, none of the top-rated lipsticks has a large enough group of reviewers to be reliable. The group of most popular lipsticks seems more promising ... but 6 of these have average ratings of 4.2 or lower, which, as we'll discuss later, is actually pretty low for this dataset.
 
 To get a general overview of the data, I generate a scatter plot of average rating vs number of ratings:
 
-![](images/img5.png)
-![](images/img6.png)
+<img src="images/img5.png" width="800" />
+<img src="images/img6.png" width="800" />
 
 We can see a couple interesting things here: all lipsticks with extremely high or low ratings have a small number of reviews, which makes sense.  As the number of reviews increases, the range of average ratings narrows to between 4.0 and 4.5. However, the data is so tightly clustered to the left that it's hard to get a clear picture of what the density looks like. So next, I use the author's code to generate a hex graph of the data with a logarithmically scaled x-axis:
 
-![](images/img7.png)
-![](images/img8.png) 
+<img src="images/img7.png" width="800" />
+<img src="images/img8.png" width="800" />
 
 The goal is to be able to look at where the data is most dense, and use that to generate an estimate of the _confidence_ - the minimum number of reviews a lipstick must have before we consider its rating "reliable" - and the _prior_ - the average rating that is approached as the number of reviews increases.
 
@@ -41,11 +41,11 @@ Looking at the graph, I see that the darkest blue cluster (indicating the highes
 
 Next, I use the observed confidence and prior to generate a "Bayesian mean" for each lipstick.  Essentially, this is a prediction of the rating a lipstick would get if it had _C_ additional reviews at _m_ stars each.  Thus, the equation looks like this:
 
-![](images/img9.png)
+<img src="images/img9.png" width="800" />
 
 I apply this function to each row in my DataFrame, adding a new column containing the Bayesian mean for each row. Then I sort the rows and print the top 10:
 
-![](images/img10.png)
+<img src="images/img10.png" width="800" />
 
 Sure enough, these lipsticks appear to represent a happy medium between most-popular and top-rated. One of the most popular, Russian Red, appears in this list as well, but the rest have less than half that number of reviews while yet having high average ratings of 4.6-4.7.
 
