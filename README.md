@@ -9,19 +9,19 @@ First, though, I need a dataset to work with. I write a [web scraper](scraper.py
 
 Next, I load the data into a pandas.DataFrame, excluding the "percent buy again" column since I'm not going to use it at the moment, and specifying the data types of the other columns:
 
-<img src="images/img1.png" width="800" />
+<img src="images/img1.png" width="700" />
 
 Now the DataFrame looks like this:
 
-<img src="images/img2.png" width="600" />
+<img src="images/img2.png" width="500" />
 
 For starters, I compare the top 10 most popular lipsticks...
 
-<img src="images/img3.png" width="600" />
+<img src="images/img3.png" width="500" />
 
 ...with the 10 most highly rated lipsticks:
 
-<img src="images/img4.png" width="600" />
+<img src="images/img4.png" width="500" />
 
 Clearly, none of the top-rated lipsticks has a large enough group of reviewers to be reliable. The group of most popular lipsticks seems more promising ... but 6 of these have average ratings of 4.2 or lower, which, as we'll discuss later, is actually pretty low for this dataset.
 
