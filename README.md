@@ -27,12 +27,12 @@ Clearly, none of the top-rated lipsticks has a large enough group of reviewers t
 
 To get a general overview of the data, I generate a scatter plot of average rating vs number of ratings:
 
-<img src="images/img5.png" width="500" />
+<img src="images/img5.png" width="450" />
 <img src="images/img6.png" width="600" />
 
 We can see a couple interesting things here: all lipsticks with extremely high or low ratings have a small number of reviews, which makes sense.  As the number of reviews increases, the range of average ratings narrows to between 4.0 and 4.5. However, the data is so tightly clustered to the left that it's hard to get a clear picture of what the density looks like. So next, I use the author's code to generate a hex graph of the data with a logarithmically scaled x-axis:
 
-<img src="images/img7.png" width="600" />
+<img src="images/img7.png" width="500" />
 <img src="images/img8.png" width="600" />
 
 The goal is to be able to look at where the data is most dense, and use that to generate an estimate of the _confidence_ - the minimum number of reviews a lipstick must have before we consider its rating "reliable" - and the _prior_ - the average rating that is approached as the number of reviews increases.
@@ -41,11 +41,11 @@ Looking at the graph, I see that the darkest blue cluster (indicating the highes
 
 Next, I use the observed confidence and prior to generate a "Bayesian mean" for each lipstick.  Essentially, this is a prediction of the rating a lipstick would get if it had _C_ additional reviews at _m_ stars each.  Thus, the equation looks like this:
 
-<img src="images/img9.png" width="800" />
+<img src="images/img9.png" width="700" />
 
 I apply this function to each row in my DataFrame, adding a new column containing the Bayesian mean for each row. Then I sort the rows and print the top 10:
 
-<img src="images/img10.png" width="800" />
+<img src="images/img10.png" width="700" />
 
 Sure enough, these lipsticks appear to represent a happy medium between most-popular and top-rated. One of the most popular, Russian Red, appears in this list as well, but the rest have less than half that number of reviews while yet having high average ratings of 4.6-4.7.
 
