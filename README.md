@@ -32,7 +32,7 @@ To get a general overview of the data, I generate a scatter plot of average rati
 
 We can see a couple interesting things here: all lipsticks with extremely high or low ratings have a small number of reviews, which makes sense.  As the number of reviews increases, the range of average ratings narrows to between 4.0 and 4.5. However, the data is so tightly clustered to the left that it's hard to get a clear picture of what the density looks like. So next, I use the author's code to generate a hex graph of the data with a logarithmically scaled x-axis:
 
-<img src="images/img7.png" width="500" />
+<img src="images/img7.png" width="600" />
 <img src="images/img8.png" width="600" />
 
 The goal is to be able to look at where the data is most dense, and use that to generate an estimate of the _confidence_ - the minimum number of reviews a lipstick must have before we consider its rating "reliable" - and the _prior_ - the average rating that is approached as the number of reviews increases.
