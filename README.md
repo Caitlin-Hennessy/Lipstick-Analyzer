@@ -9,7 +9,7 @@ First, though, I need a dataset to work with. I write a [web scraper](scraper.py
 
 Next, I load the data into a pandas.DataFrame, excluding the "percent buy again" column since I'm not going to use it at the moment, and specifying the data types of the other columns:
 
-![](images/img1.png)
+<img src="images/img1.png" width="200" />
 
 Now the DataFrame looks like this:
 
