@@ -13,22 +13,22 @@ Next, I load the data into a pandas.DataFrame, excluding the "percent buy again"
 
 Now the DataFrame looks like this:
 
-<img src="images/img2.png" width="800" />
+<img src="images/img2.png" width="600" />
 
 For starters, I compare the top 10 most popular lipsticks...
 
-<img src="images/img3.png" width="800" />
+<img src="images/img3.png" width="600" />
 
 ...with the 10 most highly rated lipsticks:
 
-<img src="images/img4.png" width="800" />
+<img src="images/img4.png" width="600" />
 
 Clearly, none of the top-rated lipsticks has a large enough group of reviewers to be reliable. The group of most popular lipsticks seems more promising ... but 6 of these have average ratings of 4.2 or lower, which, as we'll discuss later, is actually pretty low for this dataset.
 
 To get a general overview of the data, I generate a scatter plot of average rating vs number of ratings:
 
-<img src="images/img5.png" width="800" />
-<img src="images/img6.png" width="800" />
+<img src="images/img5.png" width="600" />
+<img src="images/img6.png" width="700" />
 
 We can see a couple interesting things here: all lipsticks with extremely high or low ratings have a small number of reviews, which makes sense.  As the number of reviews increases, the range of average ratings narrows to between 4.0 and 4.5. However, the data is so tightly clustered to the left that it's hard to get a clear picture of what the density looks like. So next, I use the author's code to generate a hex graph of the data with a logarithmically scaled x-axis:
 
